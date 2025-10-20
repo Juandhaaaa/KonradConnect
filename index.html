@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KonradConnect - Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <h1 class="logo">KonradConnect</h1>
+        <nav class="nav-links">
+            <a href="#">Comunicados Académicos</a>
+            <a href="#">Plaza Konrad</a>
+            <a href="#">Iniciar Sesión / Registrarse</a>
+        </nav>
+    </header>
+
+    <!-- ================= CONTENEDOR PRINCIPAL (FEED + SIDEBAR) ================= -->
+    <div class="main-container">
+
+        <!-- ================= FEED PRINCIPAL ================= -->
+        <main class="feed">
+
+            <!-- EJEMPLO DE PUBLICACIÓN -->
+            <article class="post">
+                <div class="post-content">
+                    <h3>Jornada de Vacunación 📍</h3>
+                    <p>Hoy en la cafetería universitaria desde las 9:00 AM estarán aplicando vacunas gratis.
+                        ¡Aprovecha la jornada!</p>
+                    <span class="post-date">Publicado hace 2 horas</span>
+                </div>
+
+                <!-- COMENTARIOS -->
+                <div class="comments-section">
+                    <h4>Comentarios:</h4>
+
+                    <div class="comment">
+                        <p><strong>JuanD:</strong> ¿Hasta qué hora estarán?</p>
+                    </div>
+
+                    <form action="comentarios.jsp" method="post">
+                        <input type="hidden" name="post_id" value="1">
+                        <input type="text" name="comentario" placeholder="Escribe un comentario..." required>
+                        <button type="submit">Comentar</button>
+                    </form>
+                </div>
+            </article>
+
+            <!-- OTRO EJEMPLO -->
+            <article class="post">
+                <div class="post-content">
+                    <h3>Menú de Plaza Konrad 🍽️</h3>
+                    <p>Hoy el menú incluye: Arroz con pollo, sopa de verduras y jugo de mango.</p>
+                    <span class="post-date">Publicado hace 4 horas</span>
+                </div>
+
+                <div class="comments-section">
+                    <h4>Comentarios:</h4>
+                    <div class="comment">
+                        <p><strong>Sebas:</strong> ¿Incluye postre?</p>
+                    </div>
+
+                    <form action="comentarios.jsp" method="post">
+                        <input type="hidden" name="post_id" value="2">
+                        <input type="text" name="comentario" placeholder="Escribe un comentario..." required>
+                        <button type="submit">Comentar</button>
+                    </form>
+                </div>
+            </article>
+
+        </main>
+
+        <!-- ================= COLUMNA DERECHA (SIDEBAR) ================= -->
+        <aside class="sidebar-right">
+            <!-- Tarjeta de perfil (simulada por ahora) -->
+            <div class="profile-card">
+                <h3>Mi Perfil</h3>
+                <p>Nombre de usuario</p>
+                <button>Administrar mis publicaciones</button>
+            </div>
+
+            <!-- Lista de contactos -->
+            <div class="contacts">
+                <h3>Contactos</h3>
+                <ul>
+                    <li>JuanD</li>
+                    <li>Sebastian</li>
+                    <li>Daniel</li>
+                </ul>
+            </div>
+        </aside>
+
+    </div>
+
+</body>
+</html>
