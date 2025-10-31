@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Comentario = require("../models/comentariosAnonimos");
+const Comentario = require("../models/comentarioAnonimos");
 
 
 // Crear comentario
