@@ -3,7 +3,7 @@ const router = express.Router(); // Manejador de rutas de express
 const Publicacion = require("../models/publicacionesOficiales"); // Importamos el modelo de Publicación
 
 // Crear nueva publicación oficial
-router.post("/publicaciones", (req, res) => {
+router.post("/", (req, res) => {
     // Creamos la nueva publicación usando los datos de la solicitud
     const publicacion = new Publicacion({
         titulo: req.body.titulo,
