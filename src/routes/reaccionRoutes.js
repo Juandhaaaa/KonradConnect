@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Reaccion = require("../models/Reaccion");
+const Reaccion = require("../models/Reacciones");
 
 
 // Crear reacción
