@@ -18,3 +18,28 @@ router.post("/signup", async (req, res) => {
 
   res.json({ auth: true, token });
 });
+
+router.post("/login", async (req, res) => {
+  const { correo, clave } = req.body;
+
+  // Buscar el usuario por correo
+  const user = await userSchema.findOne({ correo });
+  if (!user) {
+    return res.status(400).json({ message: "Correo o contraseña incorrectos usuario" });
+  }
+
+  // Comparar la clave ingresada con la clave almacenada (encriptada)
+  console.log("Clave ingresada:", user.clave);
+  const isMatch = await bcrypt.compare(clave, user.clave);
+  if (!isMatch) {
+    return res.status(400).json({ message: "Correo o contraseña incorrectos clave" });
+  }
+
+  // Generar el token JWT si las credenciales son correctas
+  const token = jwt.sign({ id: user._id }, process.env.SECRET, { expiresIn: "24h" });
+
+  // Enviar el token como respuesta
+  res.status(200).json({ auth: true, token });
+});
+
+module.exports = router;
