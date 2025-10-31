@@ -1,22 +1,19 @@
 const mongoose = require("mongoose");
 
-// Esquema de Inscripción
 const inscripcionSchema = new mongoose.Schema({
   estudiante: {
-    type: mongoose.Schema.Types.ObjectId, // Referencia al usuario inscrito
-    ref: "Usuario",
+    type: String,
     required: true
   },
   evento: {
-    type: mongoose.Schema.Types.ObjectId, // Referencia al evento al que se inscribe
-    ref: "Evento",
+    type: String,
     required: true
   },
   fechaInscripcion: {
     type: Date,
-    default: Date.now // Se pone automáticamente la fecha y hora
-  },
+    default: Date.now
+  }
 });
 
-// Exportar modelo
 module.exports = mongoose.model("Inscripcion", inscripcionSchema);
+

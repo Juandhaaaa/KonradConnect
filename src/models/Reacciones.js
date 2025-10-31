@@ -2,12 +2,11 @@ const mongoose = require("mongoose");
 
 const ReaccionSchema = new mongoose.Schema({
   usuario: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Usuario",
+    type: String, 
     required: true
   },
   elementoId: { 
-    type: mongoose.Schema.Types.ObjectId,
+    type: String,
     required: true 
   },
   tipoElemento: { 
@@ -25,5 +24,8 @@ const ReaccionSchema = new mongoose.Schema({
     default: Date.now
   }
 });
+
+module.exports = mongoose.model("Reaccion", ReaccionSchema);
+
 
 module.exports = mongoose.model("Reaccion", ReaccionSchema);

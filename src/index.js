@@ -16,7 +16,7 @@ const inscripcionRoutes = require('./routes/inscripcionRoutes');
 app.use(express.json());
 
 // Registrar las rutas
-app.use('/api', authRoutes);
+app.use('/api', authRoutes); 
 app.use('/api/publicacion', publicacionRoutes);
 app.use('/api/comentario', comentarioRoutes);
 app.use('/api/reacciones', reaccionRoutes);

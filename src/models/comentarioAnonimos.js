@@ -1,23 +1,14 @@
-const mongoose = require("mongoose");  // Importando el componente mongoose
+const mongoose = require("mongoose");
 
-const comentarioSchema = mongoose.Schema({
+const ComentarioAnonimoSchema = new mongoose.Schema({
   contenido: {
     type: String,
-    required: true
+    required: true,
   },
   fecha: {
     type: Date,
-    default: Date.now
-  },
-  creador: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Usuario",
-    required: true
-  },
-  visibleAnonimo: {
-    type: Boolean,
-    default: true
+    default: Date.now,
   }
 });
 
-module.exports = mongoose.model("Comentario", comentarioSchema);
+module.exports = mongoose.model("ComentarioAnonimo", ComentarioAnonimoSchema);
