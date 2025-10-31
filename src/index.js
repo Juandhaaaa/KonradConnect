@@ -9,6 +9,7 @@ require('dotenv').config(); // Cargar variables de entorno
 const authRoutes = require('./routes/authentication'); //Ruta correcta para autenticación
 const  publicacionRoutes= require('./routes/publicacionRoutes'); 
 const comentarioRoutes= require('./routes/comentarioRoutes');
+const reaccionRoutes = require('./routes/reaccionRoutes');
 
 // Middleware para leer datos en formato JSON
 app.use(express.json());
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use('/api', authRoutes);
 app.use('/api/publicacion', publicacionRoutes);
 app.use('/api/comentario', comentarioRoutes);
+app.use('/api/reacciones', reaccionRoutes);
 
 // Conectar con la base de datos
 mongoose
