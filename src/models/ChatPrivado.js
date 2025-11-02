@@ -1,3 +1,5 @@
+// Modelo ChatPrivado
+
 const mongoose = require('mongoose');
 
 const mensajeSchema = new mongoose.Schema({
