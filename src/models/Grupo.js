@@ -1,3 +1,5 @@
+// Modelo Grupos
+
 const mongoose = require('mongoose');
 
 const grupoSchema = new mongoose.Schema({

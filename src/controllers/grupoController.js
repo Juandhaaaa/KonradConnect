@@ -1,3 +1,5 @@
+// Controlador Grupos
+
 const Grupo = require('../models/Grupo');
 
 // Crear grupo
