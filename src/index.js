@@ -16,11 +16,16 @@ const inscripcionRoutes = require('./routes/inscripcionRoutes');
 app.use(express.json());
 
 // Registrar las rutas
-app.use('/api', authRoutes); 
+app.use('/api', authRoutes);
 app.use('/api/publicacion', publicacionRoutes);
+
+const grupoRoutes = require('./routes/grupoRoutes');
+app.use('/api/grupos', grupoRoutes);
+
 app.use('/api/comentario', comentarioRoutes);
 app.use('/api/reacciones', reaccionRoutes);
-app.use("/api", inscripcionRoutes);
+app.use('/api', inscripcionRoutes);
+
 
 // Conectar con la base de datos
 mongoose
@@ -31,5 +36,4 @@ mongoose
 // Iniciar el servidor
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
-});
-
+}); 
