@@ -1,3 +1,5 @@
+// Controlador ChatPrivado
+
 const ChatPrivado = require('../models/ChatPrivado');
 
 // Crear chat
