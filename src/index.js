@@ -20,7 +20,10 @@ app.use('/api', authRoutes);
 app.use('/api/publicacion', publicacionRoutes);
 
 const grupoRoutes = require('./routes/grupoRoutes');
-app.use('/api/grupos', grupoRoutes);
+app.use('/api/grupos', grupoRoutes); 
+
+const chatRoutes = require('./routes/chatRoutes');
+app.use('/api/chats', chatRoutes); 
 
 app.use('/api/comentario', comentarioRoutes);
 app.use('/api/reacciones', reaccionRoutes);
