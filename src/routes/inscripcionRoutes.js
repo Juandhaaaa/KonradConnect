@@ -29,6 +29,13 @@ router.get("/inscripciones/:id", (req, res) => {
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
+// Modificar inscripción
+router.put("/inscripciones/:id", (req, res) => {
+  const { id } = req.params;
+  Inscripcion.updateOne({ _id: id }, { $set: req.body })
+    .then((data) => res.json({ message: "Inscripción actualizada", data }))
+    .catch((error) => res.json({ message: error }));
+});
 
 // Eliminar inscripción
 router.delete("/inscripciones/:id", (req, res) => {

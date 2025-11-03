@@ -27,7 +27,7 @@ app.use('/api/chats', chatRoutes);
 console.log('✅ Rutas de chat privado activas en /api/chats');
 
 
-app.use('/api/comentario', comentarioRoutes);
+app.use('/api', comentarioRoutes);
 app.use('/api/reacciones', reaccionRoutes);
 app.use('/api', inscripcionRoutes);
 
